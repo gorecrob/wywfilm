@@ -29,6 +29,6 @@ void MainWindow::startCountDown()
     QString text = time.toString("hh:mm:ss");
     if ((time.second() % 2) == 0)
         text[5] = '  ';
-    ui->lcdNumber->display(text);
+    ui->lcdNumber_wywolanie->display(text);
 
 }
