@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>662</width>
+    <height>507</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,47 +19,100 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>381</width>
-      <height>231</height>
+      <width>641</width>
+      <height>441</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
-        <string>GroupBox</string>
+        <string/>
        </property>
-       <widget class="QLCDNumber" name="lcdNumber">
+       <widget class="QWidget" name="gridLayoutWidget_2">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>131</width>
-          <height>41</height>
+          <x>9</x>
+          <y>9</y>
+          <width>621</width>
+          <height>421</height>
          </rect>
         </property>
-        <property name="mode">
-         <enum>QLCDNumber::Dec</enum>
-        </property>
-        <property name="segmentStyle">
-         <enum>QLCDNumber::Filled</enum>
-        </property>
-        <property name="value" stdset="0">
-         <double>9.000000000000000</double>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>70</y>
-          <width>91</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
-        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="0">
+          <widget class="QLCDNumber" name="lcdNumber"/>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Wywołanie</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Przerywanie</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLCDNumber" name="lcdNumber_2"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Utrwalanie</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLCDNumber" name="lcdNumber_3"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Płukanie</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLCDNumber" name="lcdNumber_4"/>
+         </item>
+         <item row="8" column="0">
+          <widget class="QPushButton" name="startButton">
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QPushButton" name="stopButton">
+           <property name="text">
+            <string>Stop</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QDial" name="dial"/>
+         </item>
+         <item row="10" column="0">
+          <widget class="QPushButton" name="resetButton">
+           <property name="text">
+            <string>Reset</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QDial" name="dial_2"/>
+         </item>
+         <item row="5" column="1">
+          <widget class="QDial" name="dial_3"/>
+         </item>
+         <item row="7" column="1">
+          <widget class="QDial" name="dial_4"/>
+         </item>
+        </layout>
        </widget>
       </widget>
      </item>
@@ -71,7 +124,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>662</width>
      <height>21</height>
     </rect>
    </property>
