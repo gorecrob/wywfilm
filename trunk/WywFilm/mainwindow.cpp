@@ -58,7 +58,7 @@ void MainWindow::displayTime()
             if ((time.second() % 2) == 0)
                 text[5] = '  ';
         ui->lcdNumber_wywolanie->display(text);
-
+        ui->lcdNumber_przerywanie->display(time.elapsed());
 
     }
     else
@@ -67,6 +67,7 @@ void MainWindow::displayTime()
         ui->startButton->setDisabled(false);
         ui->stopButton->setDisabled(true);
         ui->resetButton->setDisabled(false);
+        ui->lcdNumber_przerywanie->display(time.elapsed());
     }
     ui->lcdNumber_przerywanie->display(time.elapsed());
 
