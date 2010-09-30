@@ -10,9 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     centralWidget()->setLayout(ui->gridLayout);
 
-    QTimer *timer = new QTimer(this);
+    timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(startCountDown()));
-    timer->start(1000);
+
     //startCountDown();
 }
 
@@ -24,11 +24,24 @@ MainWindow::~MainWindow()
 
 void MainWindow::startCountDown()
 {
+    timer->start(1000);
+    displayTime();
+
+}
+
+//void MainWindow::stopCountDown()
+//{
+ //   timer->stop();
+//}
+
+void MainWindow::displayTime()
+{
     int czas = 60;
     QTime time = QTime::currentTime();
     QString text = time.toString("hh:mm:ss");
     if ((time.second() % 2) == 0)
         text[5] = '  ';
     ui->lcdNumber_wywolanie->display(text);
+
 
 }

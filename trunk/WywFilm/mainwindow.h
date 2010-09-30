@@ -18,9 +18,14 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QTimer *timer;
+
+    void displayTime();
 
 private slots:
     void startCountDown();
+    void stopCountDown();
+    //void resetCountDown();
 };
 
 #endif // MAINWINDOW_H
