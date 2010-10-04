@@ -203,7 +203,7 @@ void MainWindow::startDisplay()
 
 void MainWindow::getTimes()
 {
-    czas_wyw = 30;
+    czas_wyw = 59*60;
     czas_przer = 30;
     czas_utrw = 30;
     czas_pluk = 20;
@@ -212,71 +212,95 @@ void MainWindow::getTimes()
 
 void MainWindow::wywTimeUp()
 {
-czas_wyw += 5;
-QTime czas_disp = QTime(0,0,0,0);
-czas_disp = czas_disp.addSecs(czas_wyw);
-QString text = czas_disp.toString("mm:ss");
-ui->lcdNumber_wywolanie->display(text);
+    if ( czas_wyw < 3595 )
+    {
+        czas_wyw += 5;
+        QTime czas_disp = QTime(0,0,0,0);
+        czas_disp = czas_disp.addSecs(czas_wyw);
+        QString text = czas_disp.toString("mm:ss");
+        ui->lcdNumber_wywolanie->display(text);
+    }
 }
 
 void MainWindow::wywTimeDown()
 {
-czas_wyw -= 5;
-QTime czas_disp = QTime(0,0,0,0);
-czas_disp = czas_disp.addSecs(czas_wyw);
-QString text = czas_disp.toString("mm:ss");
-ui->lcdNumber_wywolanie->display(text);
+    if ( czas_wyw >= 5 )
+    {
+        czas_wyw -= 5;
+        QTime czas_disp = QTime(0,0,0,0);
+        czas_disp = czas_disp.addSecs(czas_wyw);
+        QString text = czas_disp.toString("mm:ss");
+        ui->lcdNumber_wywolanie->display(text);
+    }
 }
 
 void MainWindow::przerTimeUp()
 {
-czas_przer += 5;
-QTime czas_disp = QTime(0,0,0,0);
-czas_disp = czas_disp.addSecs(czas_przer);
-QString text = czas_disp.toString("mm:ss");
-ui->lcdNumber_przerywanie->display(text);
+    if ( czas_przer < 3595 )
+    {
+        czas_przer += 5;
+        QTime czas_disp = QTime(0,0,0,0);
+        czas_disp = czas_disp.addSecs(czas_przer);
+        QString text = czas_disp.toString("mm:ss");
+        ui->lcdNumber_przerywanie->display(text);
+    }
 }
 
 void MainWindow::przerTimeDown()
 {
-czas_przer -= 5;
-QTime czas_disp = QTime(0,0,0,0);
-czas_disp = czas_disp.addSecs(czas_przer);
-QString text = czas_disp.toString("mm:ss");
-ui->lcdNumber_przerywanie->display(text);
+    if ( czas_przer >= 5 )
+    {
+        czas_przer -= 5;
+        QTime czas_disp = QTime(0,0,0,0);
+        czas_disp = czas_disp.addSecs(czas_przer);
+        QString text = czas_disp.toString("mm:ss");
+        ui->lcdNumber_przerywanie->display(text);
+    }
 }
 void MainWindow::utrwTimeUp()
 {
-czas_utrw += 5;
-QTime czas_disp = QTime(0,0,0,0);
-czas_disp = czas_disp.addSecs(czas_utrw);
-QString text = czas_disp.toString("mm:ss");
-ui->lcdNumber_utrwalanie->display(text);
+    if ( czas_utrw < 3595 )
+    {
+        czas_utrw += 5;
+        QTime czas_disp = QTime(0,0,0,0);
+        czas_disp = czas_disp.addSecs(czas_utrw);
+        QString text = czas_disp.toString("mm:ss");
+        ui->lcdNumber_utrwalanie->display(text);
+    }
 }
 
 void MainWindow::utrwTimeDown()
 {
-czas_utrw -= 5;
-QTime czas_disp = QTime(0,0,0,0);
-czas_disp = czas_disp.addSecs(czas_utrw);
-QString text = czas_disp.toString("mm:ss");
-ui->lcdNumber_utrwalanie->display(text);
+    if ( czas_utrw >= 5 )
+    {
+        czas_utrw -= 5;
+        QTime czas_disp = QTime(0,0,0,0);
+        czas_disp = czas_disp.addSecs(czas_utrw);
+        QString text = czas_disp.toString("mm:ss");
+        ui->lcdNumber_utrwalanie->display(text);
+    }
 }
 void MainWindow::plukTimeUp()
 {
-czas_pluk += 5;
-QTime czas_disp = QTime(0,0,0,0);
-czas_disp = czas_disp.addSecs(czas_pluk);
-QString text = czas_disp.toString("mm:ss");
-ui->lcdNumber_plukanie->display(text);
+    if ( czas_pluk < 3595 )
+    {
+        czas_pluk += 5;
+        QTime czas_disp = QTime(0,0,0,0);
+        czas_disp = czas_disp.addSecs(czas_pluk);
+        QString text = czas_disp.toString("mm:ss");
+        ui->lcdNumber_plukanie->display(text);
+    }
 }
 
 void MainWindow::plukTimeDown()
 {
-czas_pluk -= 5;
-QTime czas_disp = QTime(0,0,0,0);
-czas_disp = czas_disp.addSecs(czas_pluk);
-QString text = czas_disp.toString("mm:ss");
-ui->lcdNumber_plukanie->display(text);
+    if ( czas_pluk >= 5 )
+    {
+        czas_pluk -= 5;
+        QTime czas_disp = QTime(0,0,0,0);
+        czas_disp = czas_disp.addSecs(czas_pluk);
+        QString text = czas_disp.toString("mm:ss");
+        ui->lcdNumber_plukanie->display(text);
+    }
 }
 
