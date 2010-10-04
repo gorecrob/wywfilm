@@ -10,11 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     centralWidget()->setLayout(ui->gridLayout);
     ui->stopButton->setDisabled(true);
-    czas_wyw = 30;
-    czas_przer = 30;
-    czas_utrw = 30;
-    czas_pluk = 20;
-    czas_miedzy = 10;
+
+    getTimes();
 
     QTime czas_disp = QTime(0,0,0,0);
     czas_disp = czas_disp.addSecs(czas_wyw);
@@ -97,10 +94,7 @@ void MainWindow::resetCountDown()
 {
     if ( !timer->isActive())
     {
-        czas_wyw = 30;
-        czas_przer = 30;
-        czas_utrw = 30;
-        czas_pluk = 20;
+        getTimes();
 
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_wyw);
@@ -190,4 +184,31 @@ void MainWindow::startDisplay()
 {
     displayTime();
 
+}
+
+void MainWindow::getTimes()
+{
+    czas_wyw = 30;
+    czas_przer = 30;
+    czas_utrw = 30;
+    czas_pluk = 20;
+    czas_miedzy = 10;
+}
+
+void MainWindow::wywTimeUp()
+{
+czas_wyw += 5;
+QTime czas_disp = QTime(0,0,0,0);
+czas_disp = czas_disp.addSecs(czas_wyw);
+QString text = czas_disp.toString("mm:ss");
+ui->lcdNumber_wywolanie->display(text);
+}
+
+void MainWindow::wywTimeDown()
+{
+czas_wyw -= 5;
+QTime czas_disp = QTime(0,0,0,0);
+czas_disp = czas_disp.addSecs(czas_wyw);
+QString text = czas_disp.toString("mm:ss");
+ui->lcdNumber_wywolanie->display(text);
 }

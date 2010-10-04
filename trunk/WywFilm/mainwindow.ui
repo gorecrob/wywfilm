@@ -564,13 +564,49 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>wywTimeUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>341</x>
+     <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>wywTimeDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>351</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>375</x>
+     <y>37</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>signalStartCountDown()</signal>
   <signal>signalStopCountDown()</signal>
   <signal>signalResetCountDown()</signal>
+  <signal>signalWywTimeUp()</signal>
+  <signal>signalWywTimeDown()</signal>
   <slot>startCountDown()</slot>
   <slot>stopCountDown()</slot>
   <slot>resetCountDown()</slot>
+  <slot>wywTimeUp()</slot>
+  <slot>wywTimeDown()</slot>
  </slots>
 </ui>
