@@ -157,7 +157,7 @@
          <item row="4" column="1">
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="pushButtonPrzerUp">
              <property name="minimumSize">
               <size>
                <width>41</width>
@@ -186,7 +186,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_4">
+            <widget class="QPushButton" name="pushButtonPrzerDown">
              <property name="minimumSize">
               <size>
                <width>41</width>
@@ -219,7 +219,7 @@
          <item row="6" column="1">
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="QPushButton" name="pushButton_5">
+            <widget class="QPushButton" name="pushButtonUtrwUp">
              <property name="minimumSize">
               <size>
                <width>41</width>
@@ -248,7 +248,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_6">
+            <widget class="QPushButton" name="pushButtonUtrwDown">
              <property name="minimumSize">
               <size>
                <width>40</width>
@@ -281,7 +281,7 @@
          <item row="8" column="1">
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
-            <widget class="QPushButton" name="pushButton_7">
+            <widget class="QPushButton" name="pushButtonPlukUp">
              <property name="minimumSize">
               <size>
                <width>41</width>
@@ -310,7 +310,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_8">
+            <widget class="QPushButton" name="pushButtonPlukDown">
              <property name="minimumSize">
               <size>
                <width>41</width>
@@ -345,7 +345,7 @@
            <item row="0" column="0">
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="pushButtonWywUp">
                <property name="minimumSize">
                 <size>
                  <width>41</width>
@@ -374,7 +374,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="pushButtonWywDown">
                <property name="minimumSize">
                 <size>
                  <width>41</width>
@@ -565,7 +565,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton</sender>
+   <sender>pushButtonWywUp</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>wywTimeUp()</slot>
@@ -581,7 +581,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>pushButtonWywDown</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
    <slot>wywTimeDown()</slot>
@@ -596,6 +596,102 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButtonPrzerUp</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>przerTimeUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>354</x>
+     <y>217</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>253</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonPrzerDown</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>przerTimeDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>364</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>483</x>
+     <y>36</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonUtrwUp</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>utrwTimeUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>353</x>
+     <y>333</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>163</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonUtrwDown</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>utrwTimeDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>375</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>584</x>
+     <y>36</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonPlukUp</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>plukTimeUp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>361</x>
+     <y>448</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>74</x>
+     <y>37</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonPlukDown</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>plukTimeDown()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>343</x>
+     <y>495</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>signalStartCountDown()</signal>
@@ -603,10 +699,22 @@
   <signal>signalResetCountDown()</signal>
   <signal>signalWywTimeUp()</signal>
   <signal>signalWywTimeDown()</signal>
+  <signal>signalPrzerTimeUp()</signal>
+  <signal>signalPrzerTimeDown()</signal>
+  <signal>signalUtrwTimeUp()</signal>
+  <signal>signalUtrwTimeDown()</signal>
+  <signal>signalPlukTimeUp()</signal>
+  <signal>signalPlukTimeDown()</signal>
   <slot>startCountDown()</slot>
   <slot>stopCountDown()</slot>
   <slot>resetCountDown()</slot>
   <slot>wywTimeUp()</slot>
   <slot>wywTimeDown()</slot>
+  <slot>przerTimeUp()</slot>
+  <slot>przerTimeDown()</slot>
+  <slot>utrwTimeUp()</slot>
+  <slot>utrwTimeDown()</slot>
+  <slot>plukTimeUp()</slot>
+  <slot>plukTimeDown()</slot>
  </slots>
 </ui>
