@@ -27,6 +27,7 @@ private:
 
 
     void displayTime();
+    void getTimes();
 
 
 private slots:
@@ -34,6 +35,15 @@ private slots:
     void stopCountDown();
     void resetCountDown();
     void startDisplay();
+
+    void wywTimeUp();
+    void wywTimeDown();
+    void przerTimeUp();
+    void przerTimeDown();
+    void utrwTimeUp();
+    void utrwTimeDown();
+    void plukTimeUp();
+    void plukTimeDown();
 };
 
 #endif // MAINWINDOW_H
