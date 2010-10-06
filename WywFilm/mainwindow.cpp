@@ -309,15 +309,15 @@ void MainWindow::plukTimeDown()
 void MainWindow::setTextHowto()
 {
     QString text;
-    text = "1. Wlej wywoływacz<br>2. Włącz czas<br>3. Uderz dnem o coś twardego, tak aby powietrze zgromadzone wokół filmu oderwało się<br>4. Pilnując czasu wykonaj 10 obrotów koreksem co minutę<br>5. 10 sekund przed końcem czasu zacznij wylewać wywoływacz<br>6. Jeżeli wywoływacz jest wielokrotnego użytku odlej go do pojemnika w którym go przechowujesz";
+    text = trUtf8("1. Wlej wywoływacz<br>2. Włącz czas<br>3. Uderz dnem o coś twardego, tak aby powietrze zgromadzone wokół filmu oderwało się<br>4. Pilnując czasu wykonaj 10 obrotów koreksem co minutę<br>5. 10 sekund przed końcem czasu zacznij wylewać wywoływacz<br>6. Jeżeli wywoływacz jest wielokrotnego użytku odlej go do pojemnika w którym go przechowujesz");
     ui->textBrowser_wyw->setText(text);
 
-    text = "1. Wlewaj wodę do koreksu przez około 5 minut<br>2. Niech się spokojnie przelewa<br>3. Woda powinna też mieć około 20 stopni, po prostu letnia z kranu";
+    text = trUtf8("1. Wlewaj wodę do koreksu przez około 5 minut<br>2. Niech się spokojnie przelewa<br>3. Woda powinna też mieć około 20 stopni, po prostu letnia z kranu");
     ui->textBrowser_przer->setText(text);
 
-    text = "1. Wlej utrwalacz, może być „pod korek”<br>2. Uderz dnem koreksu o coś twardego<br>3. Wykonaj 10 przewrotów koreksem<br>4. Pod koniec znowu zrób 10 przewrotów koreksem<br>5. Jeżeli utrwalacz jest stosunkowo nowy w zupełności wystarczy 10 minut<br>6. Wylej utrwalacz<br>7. Teraz możesz odkręcić koreks";
+    text = trUtf8("1. Wlej utrwalacz, może być „pod korek”<br>2. Uderz dnem koreksu o coś twardego<br>3. Wykonaj 10 przewrotów koreksem<br>4. Pod koniec znowu zrób 10 przewrotów koreksem<br>5. Jeżeli utrwalacz jest stosunkowo nowy w zupełności wystarczy 10 minut<br>6. Wylej utrwalacz<br>7. Teraz możesz odkręcić koreks");
     ui->textBrowser_utrw->setText(text);
 
-    text = "1. Płucz przez około 20 minut bieżącą letnią wodą<br>2. Na koniec do pełnego wody koreksu dodaj odrobinę płynu do mycia naczyń<br>3. Zakręć kilka razy spiralą";
+    text = trUtf8("1. Płucz przez około 20 minut bieżącą letnią wodą<br>2. Na koniec do pełnego wody koreksu dodaj odrobinę płynu do mycia naczyń<br>3. Zakręć kilka razy spiralą");
     ui->textBrowser_pluk->setText(text);
 }
