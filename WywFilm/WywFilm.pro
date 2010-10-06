@@ -16,3 +16,7 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
+
+wince*: {
+   DEPLOYMENT_PLUGIN += qjpeg qmng qgif qpng
+}
