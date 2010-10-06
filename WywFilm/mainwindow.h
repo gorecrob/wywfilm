@@ -3,6 +3,17 @@
 
 #include <QMainWindow>
 #include <QLCDNumber>
+#include <phonon/audiooutput.h>
+#include <phonon/seekslider.h>
+#include <phonon/mediaobject.h>
+#include <phonon/volumeslider.h>
+#include <phonon/backendcapabilities.h>
+#include <QList>
+
+QT_BEGIN_NAMESPACE
+class QAction;
+QT_END_NAMESPACE
+
 
 namespace Ui {
     class MainWindow;
@@ -28,6 +39,17 @@ private:
     void setTextHowto();
     void displayTime();
     void getTimes();
+
+
+    Phonon::MediaObject *mediaObject;
+    //Phonon::MediaObject *metaInformationResolver;
+    //Phonon::AudioOutput *audioOutput;
+    //QList<Phonon::MediaSource> sources;
+/*
+    QAction *playAction;
+    QAction *pauseAction;
+    QAction *stopAction;
+*/
 
 
 private slots:
