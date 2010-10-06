@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += phonon
 
 TARGET = WywFilm
 TEMPLATE = app

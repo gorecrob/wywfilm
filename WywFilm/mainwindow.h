@@ -29,6 +29,7 @@ public:
     int czas_wyw, czas_przer, czas_utrw, czas_pluk, czas_miedzy;
     QTime *time_wyw, *time_przer, *time_utrw, *time_pluk, *time_miedzy;
 
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
@@ -41,7 +42,7 @@ private:
     void getTimes();
 
 
-    Phonon::MediaObject *mediaObject;
+    //Phonon::MediaObject *mediaObject;
     //Phonon::MediaObject *metaInformationResolver;
     //Phonon::AudioOutput *audioOutput;
     //QList<Phonon::MediaSource> sources;
