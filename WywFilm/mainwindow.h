@@ -40,17 +40,13 @@ private:
     void setTextHowto();
     void displayTime();
     void getTimes();
+    void addVoiceFiles();
 
+    Phonon::MediaObject *mediaObject;
+    Phonon::MediaObject *metaInformationResolver;
+    Phonon::AudioOutput *audioOutput;
+    QList<Phonon::MediaSource> sources;
 
-    //Phonon::MediaObject *mediaObject;
-    //Phonon::MediaObject *metaInformationResolver;
-    //Phonon::AudioOutput *audioOutput;
-    //QList<Phonon::MediaSource> sources;
-/*
-    QAction *playAction;
-    QAction *pauseAction;
-    QAction *stopAction;
-*/
 
 
 private slots:
@@ -67,6 +63,7 @@ private slots:
     void utrwTimeDown();
     void plukTimeUp();
     void plukTimeDown();
+
 };
 
 #endif // MAINWINDOW_H

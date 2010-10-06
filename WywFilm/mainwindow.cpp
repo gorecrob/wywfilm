@@ -11,9 +11,13 @@ MainWindow::MainWindow(QWidget *parent) :
     centralWidget()->setLayout(ui->gridLayout);
     ui->stopButton->setDisabled(true);
 
-    //audioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
-    //mediaObject = new Phonon::MediaObject(this);
-    //metaInformationResolver = new Phonon::MediaObject(this);
+    audioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
+    mediaObject = new Phonon::MediaObject(this);
+    metaInformationResolver = new Phonon::MediaObject(this);
+
+    mediaObject->setTickInterval(1000);
+
+    Phonon::createPath(mediaObject, audioOutput);
 
     getTimes();
 
@@ -36,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setTextHowto();
 
+    addVoiceFiles();
+
 }
 
 MainWindow::~MainWindow()
@@ -50,9 +56,55 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::addVoiceFiles()
+{
+     QString string = "../voices/wywStart.mp3";
+        Phonon::MediaSource source(string);
+
+        sources.append(source);
+
+        string = "../voices/Kalimba.mp3";
+           Phonon::MediaSource source1(string);
+
+           sources.append(source1);
+
+
+
+
+
+
+}
+
+
 
 void MainWindow::startCountDown()
 {
+    //mediaObject->play();
+    qDebug("dupa1");
+    bool wasPlaying = mediaObject->state() == Phonon::PlayingState;
+    qDebug("dupa2");
+    mediaObject->stop();
+    qDebug("dupa3");
+    mediaObject->clearQueue();
+    qDebug("dupa4");
+    //if (row >= sources.size())
+    //    return;
+    qDebug("dupa5");
+    mediaObject->setCurrentSource(sources[0]);
+    qDebug("dupa5");
+    if (!wasPlaying)
+    {
+        qDebug("was playing");
+        mediaObject->play();
+    }
+    else
+    {
+        qDebug("was not playing");
+        mediaObject->stop();
+    }
+
+
+
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(startDisplay()));
 
@@ -102,6 +154,32 @@ void MainWindow::stopCountDown()
    ui->pushButtonUtrwDown->setDisabled(false);
    ui->pushButtonPlukUp->setDisabled(false);
    ui->pushButtonPlukDown->setDisabled(false);
+   QString sss = mediaObject->errorString();
+   /*
+   bool wasPlaying = mediaObject->state() == Phonon::PlayingState;
+   qDebug("dupa2");
+   mediaObject->stop();
+   qDebug("dupa3");
+   mediaObject->clearQueue();
+   qDebug("dupa4");
+   //if (row >= sources.size())
+   //    return;
+   qDebug("dupa5");
+   mediaObject->setCurrentSource(sources[1]);
+   qDebug("dupa5");
+   if (!wasPlaying)
+   {
+       qDebug("was playing");
+       mediaObject->play();
+   }
+   else
+   {
+       qDebug("was not playing");
+       mediaObject->stop();
+   }
+    */
+   mediaObject->clear();
+
 }
 
 void MainWindow::resetCountDown()
@@ -129,7 +207,7 @@ void MainWindow::resetCountDown()
 }
 
 void MainWindow::displayTime()
-{
+{    
     if ( czas_wyw > 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
         czas_wyw--;
@@ -325,3 +403,5 @@ void MainWindow::setTextHowto()
     text = trUtf8("1. Płucz przez około 20 minut bieżącą letnią wodą<br>2. Na koniec do pełnego wody koreksu dodaj odrobinę płynu do mycia naczyń<br>3. Zakręć kilka razy spiralą");
     ui->textBrowser_pluk->setText(text);
 }
+
+
