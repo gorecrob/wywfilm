@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->stopButton->setDisabled(true);
 
     //audioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
-    mediaObject = new Phonon::MediaObject(this);
+    //mediaObject = new Phonon::MediaObject(this);
     //metaInformationResolver = new Phonon::MediaObject(this);
 
     getTimes();
