@@ -25,7 +25,7 @@ private:
 
     int czas;
 
-
+    void setTextHowto();
     void displayTime();
     void getTimes();
 
