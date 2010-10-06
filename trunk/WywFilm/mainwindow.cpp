@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     czas_disp = czas_disp.addSecs(-czas_utrw + czas_pluk);
     text = czas_disp.toString("mm:ss");
     ui->lcdNumber_plukanie->display(text);
+    //dfsdfdsf
 
 }
 
