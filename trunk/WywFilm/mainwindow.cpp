@@ -11,6 +11,10 @@ MainWindow::MainWindow(QWidget *parent) :
     centralWidget()->setLayout(ui->gridLayout);
     ui->stopButton->setDisabled(true);
 
+    //audioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
+    mediaObject = new Phonon::MediaObject(this);
+    //metaInformationResolver = new Phonon::MediaObject(this);
+
     getTimes();
 
     QTime czas_disp = QTime(0,0,0,0);
