@@ -9,6 +9,7 @@
 #include <phonon/volumeslider.h>
 #include <phonon/backendcapabilities.h>
 #include <QList>
+#include <QSound>
 
 QT_BEGIN_NAMESPACE
 class QAction;
@@ -27,7 +28,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     int czas_wyw, czas_przer, czas_utrw, czas_pluk, czas_miedzy;
-    QTime *time_wyw, *time_przer, *time_utrw, *time_pluk, *time_miedzy;
+    //QTime *time_wyw, *time_przer, *time_utrw, *time_pluk, *time_miedzy;
 
 
 private:
