@@ -46,64 +46,33 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    delete timer;
-    delete time_wyw;
-    delete time_miedzy;
-    delete time_pluk;
-    delete time_przer;
-    delete time_utrw;
-
     delete ui;
 }
 
 void MainWindow::addVoiceFiles()
 {
      QString string = "../voices/wywStart.mp3";
-        Phonon::MediaSource source(string);
+     Phonon::MediaSource source(string);
 
         sources.append(source);
 
-        string = "../voices/Kalimba.mp3";
-           Phonon::MediaSource source1(string);
+       string = "../voices/Kalimba.mp3";
+         Phonon::MediaSource source1(string);
 
            sources.append(source1);
 
+           string = "../voices/pik.mp3";
+           Phonon::MediaSource source2(string);
 
-
-
-
-
+               sources.append(source2);
 }
 
 
 
 void MainWindow::startCountDown()
 {
-    //mediaObject->play();
-    qDebug("dupa1");
-    bool wasPlaying = mediaObject->state() == Phonon::PlayingState;
-    qDebug("dupa2");
-    mediaObject->stop();
-    qDebug("dupa3");
-    mediaObject->clearQueue();
-    qDebug("dupa4");
-    //if (row >= sources.size())
-    //    return;
-    qDebug("dupa5");
     mediaObject->setCurrentSource(sources[0]);
-    qDebug("dupa5");
-    if (!wasPlaying)
-    {
-        qDebug("was playing");
-        mediaObject->play();
-    }
-    else
-    {
-        qDebug("was not playing");
-        mediaObject->stop();
-    }
-
-
+    mediaObject->play();
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(startDisplay()));
@@ -112,27 +81,6 @@ void MainWindow::startCountDown()
     {
         timer->start(1000);
     }
-    *time_wyw = QTime::currentTime();
-    int temp_czas = 0;
-    if (czas_wyw > 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0)
-    {
-        temp_czas =  czas_wyw + czas_przer + czas_utrw + czas_pluk;
-    }
-    else if (czas_wyw <= 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0)
-    {
-        temp_czas =  czas_przer + czas_utrw + czas_pluk;;
-    }
-    else if (czas_wyw <= 0 && czas_przer <= 0 && czas_utrw > 0 && czas_pluk > 0)
-    {
-        temp_czas =  czas_utrw + czas_pluk;;
-    }
-    else if (czas_wyw <= 0 && czas_przer <= 0 && czas_utrw <= 0 && czas_pluk > 0)
-    {
-        temp_czas =  czas_pluk;
-    }
-
-    *time_wyw = time_wyw->addSecs(temp_czas);
-
     startDisplay();
 
     ui->resetButton->setDisabled(true);
@@ -154,32 +102,9 @@ void MainWindow::stopCountDown()
    ui->pushButtonUtrwDown->setDisabled(false);
    ui->pushButtonPlukUp->setDisabled(false);
    ui->pushButtonPlukDown->setDisabled(false);
-   QString sss = mediaObject->errorString();
-   /*
-   bool wasPlaying = mediaObject->state() == Phonon::PlayingState;
-   qDebug("dupa2");
-   mediaObject->stop();
-   qDebug("dupa3");
-   mediaObject->clearQueue();
-   qDebug("dupa4");
-   //if (row >= sources.size())
-   //    return;
-   qDebug("dupa5");
-   mediaObject->setCurrentSource(sources[1]);
-   qDebug("dupa5");
-   if (!wasPlaying)
-   {
-       qDebug("was playing");
-       mediaObject->play();
-   }
-   else
-   {
-       qDebug("was not playing");
-       mediaObject->stop();
-   }
-    */
-   mediaObject->clear();
 
+   mediaObject->setCurrentSource(sources[1]);
+   mediaObject->play();
 }
 
 void MainWindow::resetCountDown()
@@ -211,6 +136,14 @@ void MainWindow::displayTime()
     if ( czas_wyw > 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
         czas_wyw--;
+        if ( czas_wyw % 10 == 0 )
+        {
+            if ( mediaObject->state() != Phonon::PlayingState )
+            mediaObject->setCurrentSource(sources[2]);
+            mediaObject->play();
+        }
+
+
         QTime time_disp = QTime(0,0,0,0);
         time_disp = time_disp.addSecs(czas_wyw);
         QString text = time_disp.toString("mm:ss");
@@ -236,6 +169,12 @@ void MainWindow::displayTime()
     }
     else if ( czas_wyw <= 0 && czas_przer <= 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
+        if ( czas_utrw == 60 )
+        {
+            if ( mediaObject->state() != Phonon::PlayingState )
+            mediaObject->setCurrentSource(sources[2]);
+            mediaObject->play();
+        }
         czas_utrw--;
         QTime time_disp = QTime(0,0,0,0);
         time_disp = time_disp.addSecs(czas_utrw);

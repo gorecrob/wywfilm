@@ -21,3 +21,7 @@ FORMS    += mainwindow.ui
 wince*: {
    DEPLOYMENT_PLUGIN += qjpeg qmng qgif qpng
 }
+
+wince*{
+DEPLOYMENT_PLUGIN += phonon_ds9 phonon_waveout
+}
