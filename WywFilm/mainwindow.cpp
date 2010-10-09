@@ -74,9 +74,6 @@ void MainWindow::addVoiceFiles()
 
 void MainWindow::startCountDown()
 {
-    mediaObject->setCurrentSource(sources[0]);
-    mediaObject->play();
-
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(startDisplay()));
 
@@ -135,83 +132,173 @@ void MainWindow::displayTime()
 {    
     if ( czas_wyw > 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
-        czas_wyw--;
-        if ( czas_wyw % 10 == 0 && czas_wyw != 0  )
+        if ( czas_start == 2 )
         {
-            mediaObject->setCurrentSource(sources[8]);
+            czas_start--;
+            mediaObject->setCurrentSource(sources[0]);
             mediaObject->play();
         }
-
-        if ( czas_wyw == 3 )
+        else
         {
-            mediaObject->enqueue(sources[1]);
-            mediaObject->enqueue(sources[2]);
-            mediaObject->setCurrentSource(sources[1]);
-            mediaObject->play();
+            czas_wyw--;
+            if ( czas_wyw % 60 == 0 && czas_wyw != 0  )
+            {
+                mediaObject->setCurrentSource(sources[8]);
+                mediaObject->play();
+            }
+            if ( czas_wyw == 10 )
+            {
+                mediaObject->setCurrentSource(sources[9]);
+                mediaObject->play();
+            }
+
+            if ( czas_wyw == 3 )
+            {
+                mediaObject->setCurrentSource(sources[1]);
+                mediaObject->play();
+            }
+
+
+            QTime time_disp = QTime(0,0,0,0);
+            time_disp = time_disp.addSecs(czas_wyw);
+            QString text = time_disp.toString("mm:ss");
+                if ((time_disp.second() % 2) != 0)
+                    text[2] = '  ';
+            ui->lcdNumber_wywolanie->display(text);
+            ui->pushButtonWywUp->setDisabled(true);
+            ui->pushButtonWywDown->setDisabled(true);
         }
-
-
-        QTime time_disp = QTime(0,0,0,0);
-        time_disp = time_disp.addSecs(czas_wyw);
-        QString text = time_disp.toString("mm:ss");
-            if ((time_disp.second() % 2) != 0)
-                text[2] = '  ';
-        ui->lcdNumber_wywolanie->display(text);
-        ui->pushButtonWywUp->setDisabled(true);
-        ui->pushButtonWywDown->setDisabled(true);
 
     }
     else if ( czas_wyw <= 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
-        czas_przer--;
-        if ( czas_wyw == 2 )
+        if ( czas_miedzy1 > 0 )
         {
-            mediaObject->enqueue(sources[3]);
-            mediaObject->enqueue(sources[4]);
-            mediaObject->setCurrentSource(sources[3]);
-            mediaObject->play();
-        }
-        QTime time_disp = QTime(0,0,0,0);
-        time_disp = time_disp.addSecs(czas_przer);
-        QString text = time_disp.toString("mm:ss");
-            if ((time_disp.second() % 2) != 0)
-                text[2] = '  ';
-        ui->lcdNumber_przerywanie->display(text);
-        ui->pushButtonPrzerUp->setDisabled(true);
-        ui->pushButtonPrzerDown->setDisabled(true);
+            if ( czas_miedzy1 > 1 )
+            {
+                mediaObject->setCurrentSource(sources[9]);
+                mediaObject->play();
+            }
+            czas_miedzy1--;
+            if ( czas_miedzy1 == 1 )
+            {
+                mediaObject->setCurrentSource(sources[2]);
+                mediaObject->play();
+            }
 
+        }
+        else
+        {
+            czas_przer--;
+            if ( czas_przer == 10 )
+            {
+                mediaObject->setCurrentSource(sources[9]);
+                mediaObject->play();
+            }
+
+            if ( czas_przer == 2 )
+            {
+                mediaObject->setCurrentSource(sources[3]);
+                mediaObject->play();
+            }
+            QTime time_disp = QTime(0,0,0,0);
+            time_disp = time_disp.addSecs(czas_przer);
+            QString text = time_disp.toString("mm:ss");
+                if ((time_disp.second() % 2) != 0)
+                    text[2] = '  ';
+            ui->lcdNumber_przerywanie->display(text);
+            ui->pushButtonPrzerUp->setDisabled(true);
+            ui->pushButtonPrzerDown->setDisabled(true);
+
+        }
     }
     else if ( czas_wyw <= 0 && czas_przer <= 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
-        if ( czas_utrw == 60 )
+        if ( czas_miedzy2 > 0 )
         {
-            if ( mediaObject->state() != Phonon::PlayingState )
-            mediaObject->setCurrentSource(sources[2]);
-            mediaObject->play();
+            if ( czas_miedzy2 > 1 )
+            {
+                mediaObject->setCurrentSource(sources[9]);
+                mediaObject->play();
+            }
+            czas_miedzy2--;
+            if ( czas_miedzy2 == 1 )
+            {
+                mediaObject->setCurrentSource(sources[4]);
+                mediaObject->play();
+            }
+
         }
-        czas_utrw--;
-        QTime time_disp = QTime(0,0,0,0);
-        time_disp = time_disp.addSecs(czas_utrw);
-        QString text = time_disp.toString("mm:ss");
-            if ((time_disp.second() % 2) != 0)
-                text[2] = '  ';
-        ui->lcdNumber_utrwalanie->display(text);
-        ui->pushButtonUtrwUp->setDisabled(true);
-        ui->pushButtonUtrwDown->setDisabled(true);
+        else
+        {
+            czas_utrw--;
+            if ( czas_utrw == 30 )
+            {
+                mediaObject->setCurrentSource(sources[8]);
+                mediaObject->play();
+            }
+            if ( czas_utrw == 10 )
+            {
+                mediaObject->setCurrentSource(sources[9]);
+                mediaObject->play();
+            }
+
+            if ( czas_utrw == 2 )
+            {
+                mediaObject->setCurrentSource(sources[5]);
+                mediaObject->play();
+            }
+            QTime time_disp = QTime(0,0,0,0);
+            time_disp = time_disp.addSecs(czas_utrw);
+            QString text = time_disp.toString("mm:ss");
+                if ((time_disp.second() % 2) != 0)
+                    text[2] = '  ';
+            ui->lcdNumber_utrwalanie->display(text);
+            ui->pushButtonUtrwUp->setDisabled(true);
+            ui->pushButtonUtrwDown->setDisabled(true);
+        }
 
     }
     else if ( czas_wyw <= 0 && czas_przer <= 0 && czas_utrw <= 0 && czas_pluk > 0 )
     {
-        czas_pluk--;
-        QTime time_disp = QTime(0,0,0,0);
-        time_disp = time_disp.addSecs(czas_pluk);
-        QString text = time_disp.toString("mm:ss");
-            if ((time_disp.second() % 2) != 0)
-                text[2] = '  ';
-        ui->lcdNumber_plukanie->display(text);
-        ui->pushButtonPlukUp->setDisabled(true);
-        ui->pushButtonPlukDown->setDisabled(true);
+        if ( czas_miedzy3 > 0 )
+        {
+            if ( czas_miedzy3 > 1 )
+            {
+                mediaObject->setCurrentSource(sources[9]);
+                mediaObject->play();
+            }
+            czas_miedzy3--;
+            if ( czas_miedzy3 == 1 )
+            {
+                mediaObject->setCurrentSource(sources[6]);
+                mediaObject->play();
+            }
 
+        }
+        else
+        {
+            czas_pluk--;
+            if ( czas_pluk == 10 )
+            {
+                mediaObject->setCurrentSource(sources[9]);
+                mediaObject->play();
+            }
+
+            if ( czas_pluk == 2 )
+            {
+                mediaObject->setCurrentSource(sources[7]);
+                mediaObject->play();
+            }
+            QTime time_disp = QTime(0,0,0,0);
+            time_disp = time_disp.addSecs(czas_pluk);
+            QString text = time_disp.toString("mm:ss");
+                if ((time_disp.second() % 2) != 0)
+                    text[2] = '  ';
+            ui->lcdNumber_plukanie->display(text);
+            ui->pushButtonPlukUp->setDisabled(true);
+            ui->pushButtonPlukDown->setDisabled(true);
+        }
     }
     else
     {
@@ -240,11 +327,12 @@ void MainWindow::startDisplay()
 
 void MainWindow::getTimes()
 {
-    czas_wyw = 30;
-    czas_przer = 30;
-    czas_utrw = 30;
-    czas_pluk = 20;
-    czas_miedzy = 10;
+    czas_wyw = 7*60;
+    czas_przer = 5*60;
+    czas_utrw = 8*60;
+    czas_pluk = 20*60;
+    czas_start = 2;
+    czas_miedzy1 = czas_miedzy2 = czas_miedzy3 = 10;
 }
 
 void MainWindow::wywTimeUp()

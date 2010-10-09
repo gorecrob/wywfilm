@@ -27,7 +27,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    int czas_wyw, czas_przer, czas_utrw, czas_pluk, czas_miedzy;
+    int czas_wyw, czas_przer, czas_utrw, czas_pluk, czas_miedzy1, czas_miedzy2, czas_miedzy3, czas_start;
     //QTime *time_wyw, *time_przer, *time_utrw, *time_pluk, *time_miedzy;
 
 
