@@ -51,20 +51,23 @@ MainWindow::~MainWindow()
 
 void MainWindow::addVoiceFiles()
 {
-     QString string = "../voices/wywStart.mp3";
-     Phonon::MediaSource source(string);
+    QStringList files;
+     files.append( "../voices/wywrozp_0001.mp3");
+     files.append( "../voices/wywkoniec_0001.mp3");
+     files.append( "../voices/przerroz_0001.mp3");
+     files.append( "../voices/przerkon_0001.mp3");
+     files.append( "../voices/utrroz_0001.mp3");
+     files.append( "../voices/utrzak_0001.mp3");
+     files.append( "../voices/plukroz_0001.mp3");
+     files.append( "../voices/plukzak_0001.mp3");
+     files.append( "../voices/koreks_0001.mp3");
+     files.append( "../voices/pik.mp3");
 
-        sources.append(source);
-
-       string = "../voices/Kalimba.mp3";
-         Phonon::MediaSource source1(string);
-
-           sources.append(source1);
-
-           string = "../voices/pik.mp3";
-           Phonon::MediaSource source2(string);
-
-               sources.append(source2);
+     foreach (QString string, files )
+     {
+         Phonon::MediaSource source(string);
+         sources.append(source);
+     }
 }
 
 
@@ -102,9 +105,6 @@ void MainWindow::stopCountDown()
    ui->pushButtonUtrwDown->setDisabled(false);
    ui->pushButtonPlukUp->setDisabled(false);
    ui->pushButtonPlukDown->setDisabled(false);
-
-   mediaObject->setCurrentSource(sources[1]);
-   mediaObject->play();
 }
 
 void MainWindow::resetCountDown()
@@ -136,10 +136,17 @@ void MainWindow::displayTime()
     if ( czas_wyw > 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
         czas_wyw--;
-        if ( czas_wyw % 10 == 0 )
+        if ( czas_wyw % 10 == 0 && czas_wyw != 0  )
         {
-            if ( mediaObject->state() != Phonon::PlayingState )
-            mediaObject->setCurrentSource(sources[2]);
+            mediaObject->setCurrentSource(sources[8]);
+            mediaObject->play();
+        }
+
+        if ( czas_wyw == 3 )
+        {
+            mediaObject->enqueue(sources[1]);
+            mediaObject->enqueue(sources[2]);
+            mediaObject->setCurrentSource(sources[1]);
             mediaObject->play();
         }
 
@@ -157,6 +164,13 @@ void MainWindow::displayTime()
     else if ( czas_wyw <= 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
         czas_przer--;
+        if ( czas_wyw == 2 )
+        {
+            mediaObject->enqueue(sources[3]);
+            mediaObject->enqueue(sources[4]);
+            mediaObject->setCurrentSource(sources[3]);
+            mediaObject->play();
+        }
         QTime time_disp = QTime(0,0,0,0);
         time_disp = time_disp.addSecs(czas_przer);
         QString text = time_disp.toString("mm:ss");
@@ -226,7 +240,7 @@ void MainWindow::startDisplay()
 
 void MainWindow::getTimes()
 {
-    czas_wyw = 1*60;
+    czas_wyw = 30;
     czas_przer = 30;
     czas_utrw = 30;
     czas_pluk = 20;
