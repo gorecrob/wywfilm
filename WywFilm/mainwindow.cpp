@@ -52,16 +52,16 @@ MainWindow::~MainWindow()
 void MainWindow::addVoiceFiles()
 {
     QStringList files;
-     files.append( "../voices/wywrozp_0001.mp3");
-     files.append( "../voices/wywkoniec_0001.mp3");
-     files.append( "../voices/przerroz_0001.mp3");
-     files.append( "../voices/przerkon_0001.mp3");
-     files.append( "../voices/utrroz_0001.mp3");
-     files.append( "../voices/utrzak_0001.mp3");
-     files.append( "../voices/plukroz_0001.mp3");
-     files.append( "../voices/plukzak_0001.mp3");
-     files.append( "../voices/koreks_0001.mp3");
-     files.append( "../voices/pik.mp3");
+     files.append( "../../WywFilm/voice/wywrozp_0001.mp3");
+     files.append( "../../WywFilm/voice/wywkoniec_0001.mp3");
+     files.append( "../../WywFilm/voice/przerroz_0001.mp3");
+     files.append( "../../WywFilm/voice/przerkon_0001.mp3");
+     files.append( "../../WywFilm/voice/utrroz_0001.mp3");
+     files.append( "../../WywFilm/voice/utrzak_0001.mp3");
+     files.append( "../../WywFilm/voice/plukroz_0001.mp3");
+     files.append( "../../WywFilm/voice/plukzak_0001.mp3");
+     files.append( "../../WywFilm/voice/koreks_0001.mp3");
+     files.append( "../../WywFilm/voice/pik.mp3");
 
      foreach (QString string, files )
      {

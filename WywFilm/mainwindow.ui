@@ -231,8 +231,8 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../images/upArrow.png</normaloff>../images/upArrow.png</iconset>
+                <iconset resource="ikony.qrc">
+                 <normaloff>:/new/prefix1/upArrow.png</normaloff>:/new/prefix1/upArrow.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -260,8 +260,8 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../images/downArrow.png</normaloff>../images/downArrow.png</iconset>
+                <iconset resource="ikony.qrc">
+                 <normaloff>:/new/prefix1/downArrow.png</normaloff>:/new/prefix1/downArrow.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -311,8 +311,8 @@ p, li { white-space: pre-wrap; }
               <string/>
              </property>
              <property name="icon">
-              <iconset>
-               <normaloff>../images/button_play_01.png</normaloff>../images/button_play_01.png</iconset>
+              <iconset resource="ikony.qrc">
+               <normaloff>:/new/prefix1/button_play_01.png</normaloff>:/new/prefix1/button_play_01.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -328,8 +328,8 @@ p, li { white-space: pre-wrap; }
               <string/>
              </property>
              <property name="icon">
-              <iconset>
-               <normaloff>../images/button_turn_off_01.png</normaloff>../images/button_turn_off_01.png</iconset>
+              <iconset resource="ikony.qrc">
+               <normaloff>:/new/prefix1/button_turn_off_01.png</normaloff>:/new/prefix1/button_turn_off_01.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -348,8 +348,8 @@ p, li { white-space: pre-wrap; }
               <string/>
              </property>
              <property name="icon">
-              <iconset>
-               <normaloff>../images/button_refresh_01.png</normaloff>../images/button_refresh_01.png</iconset>
+              <iconset resource="ikony.qrc">
+               <normaloff>:/new/prefix1/button_refresh_01.png</normaloff>:/new/prefix1/button_refresh_01.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -405,8 +405,8 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../images/upArrow.png</normaloff>../images/upArrow.png</iconset>
+                <iconset resource="ikony.qrc">
+                 <normaloff>:/new/prefix1/upArrow.png</normaloff>:/new/prefix1/upArrow.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -434,8 +434,8 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../images/downArrow.png</normaloff>../images/downArrow.png</iconset>
+                <iconset resource="ikony.qrc">
+                 <normaloff>:/new/prefix1/downArrow.png</normaloff>:/new/prefix1/downArrow.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -493,8 +493,8 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../images/upArrow.png</normaloff>../images/upArrow.png</iconset>
+                <iconset resource="ikony.qrc">
+                 <normaloff>:/new/prefix1/upArrow.png</normaloff>:/new/prefix1/upArrow.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -522,8 +522,8 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../images/downArrow.png</normaloff>../images/downArrow.png</iconset>
+                <iconset resource="ikony.qrc">
+                 <normaloff>:/new/prefix1/downArrow.png</normaloff>:/new/prefix1/downArrow.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -581,8 +581,8 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../images/upArrow.png</normaloff>../images/upArrow.png</iconset>
+                <iconset resource="ikony.qrc">
+                 <normaloff>:/new/prefix1/upArrow.png</normaloff>:/new/prefix1/upArrow.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -610,8 +610,8 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../images/downArrow.png</normaloff>../images/downArrow.png</iconset>
+                <iconset resource="ikony.qrc">
+                 <normaloff>:/new/prefix1/downArrow.png</normaloff>:/new/prefix1/downArrow.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -638,7 +638,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>668</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -653,7 +653,9 @@ p, li { white-space: pre-wrap; }
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="ikony.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>startButton</sender>
