@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/new/prefix2" lang="pl">
+        <file>koreks_0001.mp3</file>
+        <file>pik.mp3</file>
+        <file>plukroz_0001.mp3</file>
+        <file>plukzak_0001.mp3</file>
+        <file>przerkon_0001.mp3</file>
+        <file>przerroz_0001.mp3</file>
+        <file>utrroz_0001.mp3</file>
+        <file>utrzak_0001.mp3</file>
+        <file>wywkoniec_0001.mp3</file>
+        <file>wywrozp_0001.mp3</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1" lang="pl">
+        <file>button_play_01.png</file>
+        <file>button_refresh_01.png</file>
+        <file>button_turn_off_01.png</file>
+        <file>downArrow.png</file>
+        <file>upArrow.png</file>
+    </qresource>
+</RCC>
