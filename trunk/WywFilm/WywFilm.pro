@@ -19,7 +19,7 @@ HEADERS  += mainwindow.h
 FORMS    += mainwindow.ui
 
 wince*: {
-   DEPLOYMENT_PLUGIN += qjpeg qmng qgif qpng
+   DEPLOYMENT_PLUGIN += qjpeg qmng qgif qico
 }
 
 wince*{
