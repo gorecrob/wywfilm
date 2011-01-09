@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include <QTimer>
 #include <QTime>
+#include <QResource>
+#include <QIcon>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -51,17 +54,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::addVoiceFiles()
 {
-    QStringList files;
-     files.append( "../../WywFilm/voice/wywrozp_0001.mp3");
-     files.append( "../../WywFilm/voice/wywkoniec_0001.mp3");
-     files.append( "../../WywFilm/voice/przerroz_0001.mp3");
-     files.append( "../../WywFilm/voice/przerkon_0001.mp3");
-     files.append( "../../WywFilm/voice/utrroz_0001.mp3");
-     files.append( "../../WywFilm/voice/utrzak_0001.mp3");
-     files.append( "../../WywFilm/voice/plukroz_0001.mp3");
-     files.append( "../../WywFilm/voice/plukzak_0001.mp3");
-     files.append( "../../WywFilm/voice/koreks_0001.mp3");
-     files.append( "../../WywFilm/voice/pik.mp3");
+     QStringList files;
+     files.append( "./voice/wywrozp_0001.mp3");
+     files.append( "./voice/wywkoniec_0001.mp3");
+     files.append( "./voice/przerroz_0001.mp3");
+     files.append( "./voice/przerkon_0001.mp3");
+     files.append( "./voice/utrroz_0001.mp3");
+     files.append( "./voice/utrzak_0001.mp3");
+     files.append( "./voice/plukroz_0001.mp3");
+     files.append( "./voice/plukzak_0001.mp3");
+     files.append( "./voice/koreks_0001.mp3");
+     files.append( "./voice/pik.mp3");
 
      foreach (QString string, files )
      {
