@@ -18,6 +18,15 @@ MainWindow::MainWindow(QWidget *parent) :
     mediaObject = new Phonon::MediaObject(this);
     metaInformationResolver = new Phonon::MediaObject(this);
 
+    ui->pushButtonWywUp->setAutoRepeat(true);
+    ui->pushButtonWywDown->setAutoRepeat(true);
+    ui->pushButtonPrzerUp->setAutoRepeat(true);
+    ui->pushButtonPrzerDown->setAutoRepeat(true);
+    ui->pushButtonUtrwUp->setAutoRepeat(true);
+    ui->pushButtonUtrwDown->setAutoRepeat(true);
+    ui->pushButtonPlukUp->setAutoRepeat(true);
+    ui->pushButtonPlukDown->setAutoRepeat(true);
+
     mediaObject->setTickInterval(1000);
 
     Phonon::createPath(mediaObject, audioOutput);
@@ -342,7 +351,7 @@ void MainWindow::wywTimeUp()
 {
     if ( czas_wyw < 3595 )
     {
-        czas_wyw += 5;
+        czas_wyw += 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_wyw);
         QString text = czas_disp.toString("mm:ss");
@@ -350,11 +359,12 @@ void MainWindow::wywTimeUp()
     }
 }
 
+
 void MainWindow::wywTimeDown()
 {
-    if ( czas_wyw >= 5 )
+    if ( czas_wyw >= 1 )
     {
-        czas_wyw -= 5;
+        czas_wyw -= 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_wyw);
         QString text = czas_disp.toString("mm:ss");
@@ -366,7 +376,7 @@ void MainWindow::przerTimeUp()
 {
     if ( czas_przer < 3595 )
     {
-        czas_przer += 5;
+        czas_przer += 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_przer);
         QString text = czas_disp.toString("mm:ss");
@@ -376,9 +386,9 @@ void MainWindow::przerTimeUp()
 
 void MainWindow::przerTimeDown()
 {
-    if ( czas_przer >= 5 )
+    if ( czas_przer >= 1 )
     {
-        czas_przer -= 5;
+        czas_przer -= 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_przer);
         QString text = czas_disp.toString("mm:ss");
@@ -389,7 +399,7 @@ void MainWindow::utrwTimeUp()
 {
     if ( czas_utrw < 3595 )
     {
-        czas_utrw += 5;
+        czas_utrw += 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_utrw);
         QString text = czas_disp.toString("mm:ss");
@@ -399,9 +409,9 @@ void MainWindow::utrwTimeUp()
 
 void MainWindow::utrwTimeDown()
 {
-    if ( czas_utrw >= 5 )
+    if ( czas_utrw >= 1 )
     {
-        czas_utrw -= 5;
+        czas_utrw -= 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_utrw);
         QString text = czas_disp.toString("mm:ss");
@@ -412,7 +422,7 @@ void MainWindow::plukTimeUp()
 {
     if ( czas_pluk < 3595 )
     {
-        czas_pluk += 5;
+        czas_pluk += 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_pluk);
         QString text = czas_disp.toString("mm:ss");
@@ -422,9 +432,9 @@ void MainWindow::plukTimeUp()
 
 void MainWindow::plukTimeDown()
 {
-    if ( czas_pluk >= 5 )
+    if ( czas_pluk >= 1 )
     {
-        czas_pluk -= 5;
+        czas_pluk -= 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_pluk);
         QString text = czas_disp.toString("mm:ss");
