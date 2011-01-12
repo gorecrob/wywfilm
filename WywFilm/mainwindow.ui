@@ -231,7 +231,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="ikony.qrc">
+                <iconset resource="ikony/ikony.qrc">
                  <normaloff>:/new/prefix1/upArrow.png</normaloff>:/new/prefix1/upArrow.png</iconset>
                </property>
                <property name="iconSize">
@@ -260,7 +260,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="ikony.qrc">
+                <iconset resource="ikony/ikony.qrc">
                  <normaloff>:/new/prefix1/downArrow.png</normaloff>:/new/prefix1/downArrow.png</iconset>
                </property>
                <property name="iconSize">
@@ -311,7 +311,7 @@ p, li { white-space: pre-wrap; }
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="ikony.qrc">
+              <iconset resource="ikony/ikony.qrc">
                <normaloff>:/new/prefix1/button_play_01.png</normaloff>:/new/prefix1/button_play_01.png</iconset>
              </property>
              <property name="iconSize">
@@ -328,7 +328,7 @@ p, li { white-space: pre-wrap; }
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="ikony.qrc">
+              <iconset resource="ikony/ikony.qrc">
                <normaloff>:/new/prefix1/button_turn_off_01.png</normaloff>:/new/prefix1/button_turn_off_01.png</iconset>
              </property>
              <property name="iconSize">
@@ -348,7 +348,7 @@ p, li { white-space: pre-wrap; }
               <string/>
              </property>
              <property name="icon">
-              <iconset resource="ikony.qrc">
+              <iconset resource="ikony/ikony.qrc">
                <normaloff>:/new/prefix1/button_refresh_01.png</normaloff>:/new/prefix1/button_refresh_01.png</iconset>
              </property>
              <property name="iconSize">
@@ -405,7 +405,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="ikony.qrc">
+                <iconset resource="ikony/ikony.qrc">
                  <normaloff>:/new/prefix1/upArrow.png</normaloff>:/new/prefix1/upArrow.png</iconset>
                </property>
                <property name="iconSize">
@@ -434,7 +434,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="ikony.qrc">
+                <iconset resource="ikony/ikony.qrc">
                  <normaloff>:/new/prefix1/downArrow.png</normaloff>:/new/prefix1/downArrow.png</iconset>
                </property>
                <property name="iconSize">
@@ -493,7 +493,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="ikony.qrc">
+                <iconset resource="ikony/ikony.qrc">
                  <normaloff>:/new/prefix1/upArrow.png</normaloff>:/new/prefix1/upArrow.png</iconset>
                </property>
                <property name="iconSize">
@@ -522,7 +522,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="ikony.qrc">
+                <iconset resource="ikony/ikony.qrc">
                  <normaloff>:/new/prefix1/downArrow.png</normaloff>:/new/prefix1/downArrow.png</iconset>
                </property>
                <property name="iconSize">
@@ -581,7 +581,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="ikony.qrc">
+                <iconset resource="ikony/ikony.qrc">
                  <normaloff>:/new/prefix1/upArrow.png</normaloff>:/new/prefix1/upArrow.png</iconset>
                </property>
                <property name="iconSize">
@@ -610,7 +610,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="ikony.qrc">
+                <iconset resource="ikony/ikony.qrc">
                  <normaloff>:/new/prefix1/downArrow.png</normaloff>:/new/prefix1/downArrow.png</iconset>
                </property>
                <property name="iconSize">
@@ -638,7 +638,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>668</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -654,7 +654,7 @@ p, li { white-space: pre-wrap; }
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="ikony.qrc"/>
+  <include location="ikony/ikony.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -664,8 +664,8 @@ p, li { white-space: pre-wrap; }
    <slot>startCountDown()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>40</x>
-     <y>560</y>
+     <x>43</x>
+     <y>540</y>
     </hint>
     <hint type="destinationlabel">
      <x>5</x>
@@ -680,8 +680,8 @@ p, li { white-space: pre-wrap; }
    <slot>stopCountDown()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>163</x>
-     <y>550</y>
+     <x>225</x>
+     <y>540</y>
     </hint>
     <hint type="destinationlabel">
      <x>4</x>
@@ -696,8 +696,8 @@ p, li { white-space: pre-wrap; }
    <slot>resetCountDown()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>284</x>
-     <y>559</y>
+     <x>328</x>
+     <y>540</y>
     </hint>
     <hint type="destinationlabel">
      <x>656</x>
@@ -707,7 +707,7 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>pushButtonWywUp</sender>
-   <signal>clicked()</signal>
+   <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>wywTimeUp()</slot>
    <hints>
@@ -723,7 +723,7 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>pushButtonWywDown</sender>
-   <signal>clicked()</signal>
+   <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>wywTimeDown()</slot>
    <hints>
@@ -739,7 +739,7 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>pushButtonPrzerUp</sender>
-   <signal>clicked()</signal>
+   <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>przerTimeUp()</slot>
    <hints>
@@ -755,7 +755,7 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>pushButtonPrzerDown</sender>
-   <signal>clicked()</signal>
+   <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>przerTimeDown()</slot>
    <hints>
@@ -771,13 +771,13 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>pushButtonUtrwUp</sender>
-   <signal>clicked()</signal>
+   <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>utrwTimeUp()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>353</x>
-     <y>333</y>
+     <x>373</x>
+     <y>330</y>
     </hint>
     <hint type="destinationlabel">
      <x>163</x>
@@ -787,7 +787,7 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>pushButtonUtrwDown</sender>
-   <signal>clicked()</signal>
+   <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>utrwTimeDown()</slot>
    <hints>
@@ -803,13 +803,13 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>pushButtonPlukUp</sender>
-   <signal>clicked()</signal>
+   <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>plukTimeUp()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>361</x>
-     <y>448</y>
+     <x>373</x>
+     <y>438</y>
     </hint>
     <hint type="destinationlabel">
      <x>74</x>
@@ -819,13 +819,13 @@ p, li { white-space: pre-wrap; }
   </connection>
   <connection>
    <sender>pushButtonPlukDown</sender>
-   <signal>clicked()</signal>
+   <signal>pressed()</signal>
    <receiver>MainWindow</receiver>
    <slot>plukTimeDown()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>343</x>
-     <y>495</y>
+     <x>373</x>
+     <y>485</y>
     </hint>
     <hint type="destinationlabel">
      <x>5</x>
@@ -846,6 +846,8 @@ p, li { white-space: pre-wrap; }
   <signal>signalUtrwTimeDown()</signal>
   <signal>signalPlukTimeUp()</signal>
   <signal>signalPlukTimeDown()</signal>
+  <signal>signalwywTimeUpSpeed()</signal>
+  <signal>signalwywTimeUpSpeedStop()</signal>
   <slot>startCountDown()</slot>
   <slot>stopCountDown()</slot>
   <slot>resetCountDown()</slot>
@@ -857,5 +859,7 @@ p, li { white-space: pre-wrap; }
   <slot>utrwTimeDown()</slot>
   <slot>plukTimeUp()</slot>
   <slot>plukTimeDown()</slot>
+  <slot>wywTimeUpSpeed()</slot>
+  <slot>wywTimeUpSpeedStop()</slot>
  </slots>
 </ui>
