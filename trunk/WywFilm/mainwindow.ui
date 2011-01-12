@@ -833,6 +833,134 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButtonWywUp</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>wywTimeUpRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>92</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonWywDown</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>wywTimeDownRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>9</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonPrzerUp</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>przerTimeUpRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>200</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonPrzerDown</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>przerTimeDownRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonUtrwUp</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>utrwTimeUpRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>341</x>
+     <y>321</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonUtrwDown</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>utrwTimeDownRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>358</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>353</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonPlukUp</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>plukTimeUpRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>417</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>8</x>
+     <y>407</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButtonPlukDown</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>przerTimeDownRelease()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>346</x>
+     <y>464</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>7</x>
+     <y>458</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <signal>signalStartCountDown()</signal>
@@ -848,6 +976,14 @@ p, li { white-space: pre-wrap; }
   <signal>signalPlukTimeDown()</signal>
   <signal>signalwywTimeUpSpeed()</signal>
   <signal>signalwywTimeUpSpeedStop()</signal>
+  <signal>signalwywTimeUpRelease()</signal>
+  <signal>signal1wywTimeDownRelease()</signal>
+  <signal>signalprzerTimeUpRelease()</signal>
+  <signal>signalprzerTimeDownRelease()</signal>
+  <signal>signalutrwTimeUpRelease()</signal>
+  <signal>signalutrwTimeDownRelease()</signal>
+  <signal>signalplukTimeUpRelease()</signal>
+  <signal>signalplukTimeDownRelease()</signal>
   <slot>startCountDown()</slot>
   <slot>stopCountDown()</slot>
   <slot>resetCountDown()</slot>
@@ -861,5 +997,13 @@ p, li { white-space: pre-wrap; }
   <slot>plukTimeDown()</slot>
   <slot>wywTimeUpSpeed()</slot>
   <slot>wywTimeUpSpeedStop()</slot>
+  <slot>wywTimeUpRelease()</slot>
+  <slot>wywTimeDownRelease()</slot>
+  <slot>przerTimeUpRelease()</slot>
+  <slot>przerTimeDownRelease()</slot>
+  <slot>utrwTimeUpRelease()</slot>
+  <slot>utrwTimeDownRelease()</slot>
+  <slot>plukTimeUpRelease()</slot>
+  <slot>plukTimeDownRelease()</slot>
  </slots>
 </ui>

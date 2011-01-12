@@ -28,7 +28,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     int czas_wyw, czas_przer, czas_utrw, czas_pluk, czas_miedzy1, czas_miedzy2, czas_miedzy3, czas_start;
-    //QTime *time_wyw, *time_przer, *time_utrw, *time_pluk, *time_miedzy;
+    int autoRepeatInt;
 
 
 private:
@@ -64,6 +64,16 @@ private slots:
     void utrwTimeDown();
     void plukTimeUp();
     void plukTimeDown();
+
+    void wywTimeUpRelease();
+    void wywTimeDownRelease();
+    void przerTimeUpRelease();
+    void przerTimeDownRelease();
+    void utrwTimeUpRelease();
+    void utrwTimeDownRelease();
+    void plukTimeUpRelease();
+    void plukTimeDownRelease();
+
 
 };
 
