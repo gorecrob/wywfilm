@@ -350,8 +350,10 @@ void MainWindow::getTimes()
 
 void MainWindow::wywTimeUp()
 {
-    if ( czas_wyw < 3595 )
+    if ( czas_wyw > 3600 )
     {
+     czas_wyw = 0;
+    }
         czas_wyw += 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_wyw);
@@ -359,7 +361,7 @@ void MainWindow::wywTimeUp()
         ui->lcdNumber_wywolanie->display(text);
         if(ui->pushButtonWywUp->autoRepeatInterval() > 1 )
             ui->pushButtonWywUp->setAutoRepeatInterval(ui->pushButtonWywUp->autoRepeatInterval()-1);
-    }
+
 }
 
 void MainWindow::wywTimeUpRelease()
@@ -372,8 +374,10 @@ void MainWindow::wywTimeUpRelease()
 
 void MainWindow::wywTimeDown()
 {
-    if ( czas_wyw >= 1 )
+    if ( czas_wyw < 0 )
     {
+        czas_wyw = 3600;
+    }
         czas_wyw -= 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_wyw);
@@ -381,7 +385,6 @@ void MainWindow::wywTimeDown()
         ui->lcdNumber_wywolanie->display(text);
         if(ui->pushButtonWywDown->autoRepeatInterval() > 1 )
             ui->pushButtonWywDown->setAutoRepeatInterval(ui->pushButtonWywDown->autoRepeatInterval()-1);
-    }
 }
 void MainWindow::wywTimeDownRelease()
 {
@@ -393,8 +396,10 @@ void MainWindow::wywTimeDownRelease()
 
 void MainWindow::przerTimeUp()
 {
-    if ( czas_przer < 3595 )
+    if ( czas_przer > 3600 )
     {
+        czas_przer = 0;
+    }
         czas_przer += 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_przer);
@@ -402,7 +407,6 @@ void MainWindow::przerTimeUp()
         ui->lcdNumber_przerywanie->display(text);
         if(ui->pushButtonPrzerUp->autoRepeatInterval() > 1 )
             ui->pushButtonPrzerUp->setAutoRepeatInterval(ui->pushButtonPrzerUp->autoRepeatInterval()-1);
-    }
 }
 
 void MainWindow::przerTimeUpRelease()
@@ -415,8 +419,10 @@ void MainWindow::przerTimeUpRelease()
 
 void MainWindow::przerTimeDown()
 {
-    if ( czas_przer >= 1 )
+    if ( czas_przer < 0 )
     {
+        czas_przer = 3600;
+    }
         czas_przer -= 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_przer);
@@ -424,7 +430,6 @@ void MainWindow::przerTimeDown()
         ui->lcdNumber_przerywanie->display(text);
         if(ui->pushButtonPrzerDown->autoRepeatInterval() > 1 )
             ui->pushButtonPrzerDown->setAutoRepeatInterval(ui->pushButtonPrzerDown->autoRepeatInterval()-1);
-    }
 }
 
 void MainWindow::przerTimeDownRelease()
@@ -437,8 +442,10 @@ void MainWindow::przerTimeDownRelease()
 
 void MainWindow::utrwTimeUp()
 {
-    if ( czas_utrw < 3595 )
+    if ( czas_utrw > 3600 )
     {
+        czas_utrw = 0;
+    }
         czas_utrw += 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_utrw);
@@ -446,8 +453,7 @@ void MainWindow::utrwTimeUp()
         ui->lcdNumber_utrwalanie->display(text);
         if(ui->pushButtonUtrwUp->autoRepeatInterval() > 1 )
             ui->pushButtonUtrwUp->setAutoRepeatInterval(ui->pushButtonUtrwUp->autoRepeatInterval()-1);
-    }
-}
+ }
 
 void MainWindow::utrwTimeUpRelease()
 {
@@ -459,8 +465,10 @@ void MainWindow::utrwTimeUpRelease()
 
 void MainWindow::utrwTimeDown()
 {
-    if ( czas_utrw >= 1 )
+    if ( czas_utrw < 0 )
     {
+        czas_utrw = 3600;
+    }
         czas_utrw -= 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_utrw);
@@ -468,7 +476,6 @@ void MainWindow::utrwTimeDown()
         ui->lcdNumber_utrwalanie->display(text);
         if(ui->pushButtonUtrwDown->autoRepeatInterval() > 1 )
             ui->pushButtonUtrwDown->setAutoRepeatInterval(ui->pushButtonUtrwDown->autoRepeatInterval()-1);
-    }
 }
 
 void MainWindow::utrwTimeDownRelease()
@@ -481,8 +488,10 @@ void MainWindow::utrwTimeDownRelease()
 
 void MainWindow::plukTimeUp()
 {
-    if ( czas_pluk < 3595 )
+    if ( czas_pluk > 3600 )
     {
+        czas_pluk = 0;
+    }
         czas_pluk += 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_pluk);
@@ -490,7 +499,6 @@ void MainWindow::plukTimeUp()
         ui->lcdNumber_plukanie->display(text);
         if(ui->pushButtonPlukUp->autoRepeatInterval() > 1 )
             ui->pushButtonPlukUp->setAutoRepeatInterval(ui->pushButtonPlukUp->autoRepeatInterval()-1);
-    }
 }
 
 void MainWindow::plukTimeUpRelease()
@@ -503,8 +511,10 @@ void MainWindow::plukTimeUpRelease()
 
 void MainWindow::plukTimeDown()
 {
-    if ( czas_pluk >= 1 )
+    if ( czas_pluk < 0 )
     {
+        czas_pluk = 3600;
+    }
         czas_pluk -= 1;
         QTime czas_disp = QTime(0,0,0,0);
         czas_disp = czas_disp.addSecs(czas_pluk);
@@ -512,7 +522,6 @@ void MainWindow::plukTimeDown()
         ui->lcdNumber_plukanie->display(text);
         if(ui->pushButtonPlukDown->autoRepeatInterval() > 1 )
             ui->pushButtonPlukDown->setAutoRepeatInterval(ui->pushButtonPlukDown->autoRepeatInterval()-1);
-    }
 }
 
 void MainWindow::plukTimeDownRelease()
