@@ -34,7 +34,7 @@ public:
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
-   // QTime *time;
+    // QTime *time;
 
     int czas;
 
