@@ -7,8 +7,8 @@
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+        QMainWindow(parent),
+        ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     centralWidget()->setLayout(ui->gridLayout);
@@ -64,23 +64,23 @@ MainWindow::~MainWindow()
 
 void MainWindow::addVoiceFiles()
 {
-     QStringList files;
-     files.append( "./voice/wywrozp_0001.mp3");
-     files.append( "./voice/wywkoniec_0001.mp3");
-     files.append( "./voice/przerroz_0001.mp3");
-     files.append( "./voice/przerkon_0001.mp3");
-     files.append( "./voice/utrroz_0001.mp3");
-     files.append( "./voice/utrzak_0001.mp3");
-     files.append( "./voice/plukroz_0001.mp3");
-     files.append( "./voice/plukzak_0001.mp3");
-     files.append( "./voice/koreks_0001.mp3");
-     files.append( "./voice/pik.mp3");
+    QStringList files;
+    files.append( "./voice/wywrozp_0001.mp3");
+    files.append( "./voice/wywkoniec_0001.mp3");
+    files.append( "./voice/przerroz_0001.mp3");
+    files.append( "./voice/przerkon_0001.mp3");
+    files.append( "./voice/utrroz_0001.mp3");
+    files.append( "./voice/utrzak_0001.mp3");
+    files.append( "./voice/plukroz_0001.mp3");
+    files.append( "./voice/plukzak_0001.mp3");
+    files.append( "./voice/koreks_0001.mp3");
+    files.append( "./voice/pik.mp3");
 
-     foreach (QString string, files )
-     {
-         Phonon::MediaSource source(string);
-         sources.append(source);
-     }
+    foreach (QString string, files )
+    {
+        Phonon::MediaSource source(string);
+        sources.append(source);
+    }
 }
 
 
@@ -103,41 +103,41 @@ void MainWindow::startCountDown()
 
 void MainWindow::stopCountDown()
 {
-   timer->stop();
-   ui->resetButton->setDisabled(false);
-   ui->stopButton->setDisabled(true);
-   ui->startButton->setDisabled(false);
-   ui->pushButtonWywUp->setDisabled(false);
-   ui->pushButtonWywDown->setDisabled(false);
-   ui->pushButtonPrzerUp->setDisabled(false);
-   ui->pushButtonPrzerDown->setDisabled(false);
-   ui->pushButtonUtrwUp->setDisabled(false);
-   ui->pushButtonUtrwDown->setDisabled(false);
-   ui->pushButtonPlukUp->setDisabled(false);
-   ui->pushButtonPlukDown->setDisabled(false);
+    timer->stop();
+    ui->resetButton->setDisabled(false);
+    ui->stopButton->setDisabled(true);
+    ui->startButton->setDisabled(false);
+    ui->pushButtonWywUp->setDisabled(false);
+    ui->pushButtonWywDown->setDisabled(false);
+    ui->pushButtonPrzerUp->setDisabled(false);
+    ui->pushButtonPrzerDown->setDisabled(false);
+    ui->pushButtonUtrwUp->setDisabled(false);
+    ui->pushButtonUtrwDown->setDisabled(false);
+    ui->pushButtonPlukUp->setDisabled(false);
+    ui->pushButtonPlukDown->setDisabled(false);
 }
 
 void MainWindow::resetCountDown()
 {
 
-        getTimes();
+    getTimes();
 
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_wyw);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_wywolanie->display(text);
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_wyw);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_wywolanie->display(text);
 
-        czas_disp = czas_disp.addSecs(-czas_wyw + czas_przer);
-        text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_przerywanie->display(text);
+    czas_disp = czas_disp.addSecs(-czas_wyw + czas_przer);
+    text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_przerywanie->display(text);
 
-        czas_disp = czas_disp.addSecs(-czas_przer + czas_utrw);
-        text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_utrwalanie->display(text);
+    czas_disp = czas_disp.addSecs(-czas_przer + czas_utrw);
+    text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_utrwalanie->display(text);
 
-        czas_disp = czas_disp.addSecs(-czas_utrw + czas_pluk);
-        text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_plukanie->display(text);
+    czas_disp = czas_disp.addSecs(-czas_utrw + czas_pluk);
+    text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_plukanie->display(text);
 
 }
 
@@ -175,8 +175,8 @@ void MainWindow::displayTime()
             QTime time_disp = QTime(0,0,0,0);
             time_disp = time_disp.addSecs(czas_wyw);
             QString text = time_disp.toString("mm:ss");
-                if ((time_disp.second() % 2) != 0)
-                    text[2] = '  ';
+            if ((time_disp.second() % 2) != 0)
+                text[2] = '  ';
             ui->lcdNumber_wywolanie->display(text);
             ui->pushButtonWywUp->setDisabled(true);
             ui->pushButtonWywDown->setDisabled(true);
@@ -217,8 +217,8 @@ void MainWindow::displayTime()
             QTime time_disp = QTime(0,0,0,0);
             time_disp = time_disp.addSecs(czas_przer);
             QString text = time_disp.toString("mm:ss");
-                if ((time_disp.second() % 2) != 0)
-                    text[2] = '  ';
+            if ((time_disp.second() % 2) != 0)
+                text[2] = '  ';
             ui->lcdNumber_przerywanie->display(text);
             ui->pushButtonPrzerUp->setDisabled(true);
             ui->pushButtonPrzerDown->setDisabled(true);
@@ -264,8 +264,8 @@ void MainWindow::displayTime()
             QTime time_disp = QTime(0,0,0,0);
             time_disp = time_disp.addSecs(czas_utrw);
             QString text = time_disp.toString("mm:ss");
-                if ((time_disp.second() % 2) != 0)
-                    text[2] = '  ';
+            if ((time_disp.second() % 2) != 0)
+                text[2] = '  ';
             ui->lcdNumber_utrwalanie->display(text);
             ui->pushButtonUtrwUp->setDisabled(true);
             ui->pushButtonUtrwDown->setDisabled(true);
@@ -306,8 +306,8 @@ void MainWindow::displayTime()
             QTime time_disp = QTime(0,0,0,0);
             time_disp = time_disp.addSecs(czas_pluk);
             QString text = time_disp.toString("mm:ss");
-                if ((time_disp.second() % 2) != 0)
-                    text[2] = '  ';
+            if ((time_disp.second() % 2) != 0)
+                text[2] = '  ';
             ui->lcdNumber_plukanie->display(text);
             ui->pushButtonPlukUp->setDisabled(true);
             ui->pushButtonPlukDown->setDisabled(true);
@@ -352,15 +352,15 @@ void MainWindow::wywTimeUp()
 {
     if ( czas_wyw > 3600 )
     {
-     czas_wyw = 0;
+        czas_wyw = 0;
     }
-        czas_wyw += 1;
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_wyw);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_wywolanie->display(text);
-        if(ui->pushButtonWywUp->autoRepeatInterval() > 1 )
-            ui->pushButtonWywUp->setAutoRepeatInterval(ui->pushButtonWywUp->autoRepeatInterval()-1);
+    czas_wyw += 1;
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_wyw);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_wywolanie->display(text);
+    if(ui->pushButtonWywUp->autoRepeatInterval() > 1 )
+        ui->pushButtonWywUp->setAutoRepeatInterval(ui->pushButtonWywUp->autoRepeatInterval()-1);
 
 }
 
@@ -378,17 +378,17 @@ void MainWindow::wywTimeDown()
     {
         czas_wyw = 3600;
     }
-        czas_wyw -= 1;
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_wyw);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_wywolanie->display(text);
-        if(ui->pushButtonWywDown->autoRepeatInterval() > 1 )
-            ui->pushButtonWywDown->setAutoRepeatInterval(ui->pushButtonWywDown->autoRepeatInterval()-1);
+    czas_wyw -= 1;
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_wyw);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_wywolanie->display(text);
+    if(ui->pushButtonWywDown->autoRepeatInterval() > 1 )
+        ui->pushButtonWywDown->setAutoRepeatInterval(ui->pushButtonWywDown->autoRepeatInterval()-1);
 }
 void MainWindow::wywTimeDownRelease()
 {
-   if(!ui->pushButtonWywDown->isDown())
+    if(!ui->pushButtonWywDown->isDown())
     {
         ui->pushButtonWywDown->setAutoRepeatInterval(autoRepeatInt);
     }
@@ -400,13 +400,13 @@ void MainWindow::przerTimeUp()
     {
         czas_przer = 0;
     }
-        czas_przer += 1;
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_przer);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_przerywanie->display(text);
-        if(ui->pushButtonPrzerUp->autoRepeatInterval() > 1 )
-            ui->pushButtonPrzerUp->setAutoRepeatInterval(ui->pushButtonPrzerUp->autoRepeatInterval()-1);
+    czas_przer += 1;
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_przer);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_przerywanie->display(text);
+    if(ui->pushButtonPrzerUp->autoRepeatInterval() > 1 )
+        ui->pushButtonPrzerUp->setAutoRepeatInterval(ui->pushButtonPrzerUp->autoRepeatInterval()-1);
 }
 
 void MainWindow::przerTimeUpRelease()
@@ -423,13 +423,13 @@ void MainWindow::przerTimeDown()
     {
         czas_przer = 3600;
     }
-        czas_przer -= 1;
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_przer);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_przerywanie->display(text);
-        if(ui->pushButtonPrzerDown->autoRepeatInterval() > 1 )
-            ui->pushButtonPrzerDown->setAutoRepeatInterval(ui->pushButtonPrzerDown->autoRepeatInterval()-1);
+    czas_przer -= 1;
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_przer);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_przerywanie->display(text);
+    if(ui->pushButtonPrzerDown->autoRepeatInterval() > 1 )
+        ui->pushButtonPrzerDown->setAutoRepeatInterval(ui->pushButtonPrzerDown->autoRepeatInterval()-1);
 }
 
 void MainWindow::przerTimeDownRelease()
@@ -446,14 +446,14 @@ void MainWindow::utrwTimeUp()
     {
         czas_utrw = 0;
     }
-        czas_utrw += 1;
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_utrw);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_utrwalanie->display(text);
-        if(ui->pushButtonUtrwUp->autoRepeatInterval() > 1 )
-            ui->pushButtonUtrwUp->setAutoRepeatInterval(ui->pushButtonUtrwUp->autoRepeatInterval()-1);
- }
+    czas_utrw += 1;
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_utrw);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_utrwalanie->display(text);
+    if(ui->pushButtonUtrwUp->autoRepeatInterval() > 1 )
+        ui->pushButtonUtrwUp->setAutoRepeatInterval(ui->pushButtonUtrwUp->autoRepeatInterval()-1);
+}
 
 void MainWindow::utrwTimeUpRelease()
 {
@@ -469,13 +469,13 @@ void MainWindow::utrwTimeDown()
     {
         czas_utrw = 3600;
     }
-        czas_utrw -= 1;
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_utrw);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_utrwalanie->display(text);
-        if(ui->pushButtonUtrwDown->autoRepeatInterval() > 1 )
-            ui->pushButtonUtrwDown->setAutoRepeatInterval(ui->pushButtonUtrwDown->autoRepeatInterval()-1);
+    czas_utrw -= 1;
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_utrw);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_utrwalanie->display(text);
+    if(ui->pushButtonUtrwDown->autoRepeatInterval() > 1 )
+        ui->pushButtonUtrwDown->setAutoRepeatInterval(ui->pushButtonUtrwDown->autoRepeatInterval()-1);
 }
 
 void MainWindow::utrwTimeDownRelease()
@@ -492,13 +492,13 @@ void MainWindow::plukTimeUp()
     {
         czas_pluk = 0;
     }
-        czas_pluk += 1;
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_pluk);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_plukanie->display(text);
-        if(ui->pushButtonPlukUp->autoRepeatInterval() > 1 )
-            ui->pushButtonPlukUp->setAutoRepeatInterval(ui->pushButtonPlukUp->autoRepeatInterval()-1);
+    czas_pluk += 1;
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_pluk);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_plukanie->display(text);
+    if(ui->pushButtonPlukUp->autoRepeatInterval() > 1 )
+        ui->pushButtonPlukUp->setAutoRepeatInterval(ui->pushButtonPlukUp->autoRepeatInterval()-1);
 }
 
 void MainWindow::plukTimeUpRelease()
@@ -515,13 +515,13 @@ void MainWindow::plukTimeDown()
     {
         czas_pluk = 3600;
     }
-        czas_pluk -= 1;
-        QTime czas_disp = QTime(0,0,0,0);
-        czas_disp = czas_disp.addSecs(czas_pluk);
-        QString text = czas_disp.toString("mm:ss");
-        ui->lcdNumber_plukanie->display(text);
-        if(ui->pushButtonPlukDown->autoRepeatInterval() > 1 )
-            ui->pushButtonPlukDown->setAutoRepeatInterval(ui->pushButtonPlukDown->autoRepeatInterval()-1);
+    czas_pluk -= 1;
+    QTime czas_disp = QTime(0,0,0,0);
+    czas_disp = czas_disp.addSecs(czas_pluk);
+    QString text = czas_disp.toString("mm:ss");
+    ui->lcdNumber_plukanie->display(text);
+    if(ui->pushButtonPlukDown->autoRepeatInterval() > 1 )
+        ui->pushButtonPlukDown->setAutoRepeatInterval(ui->pushButtonPlukDown->autoRepeatInterval()-1);
 }
 
 void MainWindow::plukTimeDownRelease()
