@@ -20,13 +20,24 @@ MainWindow::MainWindow(QWidget *parent) :
     autoRepeatInt=100;
 
     ui->pushButtonWywUp->setAutoRepeat(true);
+    ui->pushButtonWywUp->setToolTip(trUtf8("Przytrzymaj aby szybciej przewijać czas"));
     ui->pushButtonWywDown->setAutoRepeat(true);
+    ui->pushButtonWywDown->setToolTip(trUtf8("Przytrzymaj aby szybciej przewijać czas"));
     ui->pushButtonPrzerUp->setAutoRepeat(true);
+    ui->pushButtonPrzerUp->setToolTip(trUtf8("Przytrzymaj aby szybciej przewijać czas"));
     ui->pushButtonPrzerDown->setAutoRepeat(true);
+    ui->pushButtonPrzerDown->setToolTip(trUtf8("Przytrzymaj aby szybciej przewijać czas"));
     ui->pushButtonUtrwUp->setAutoRepeat(true);
+    ui->pushButtonUtrwUp->setToolTip(trUtf8("Przytrzymaj aby szybciej przewijać czas"));
     ui->pushButtonUtrwDown->setAutoRepeat(true);
+    ui->pushButtonUtrwDown->setToolTip(trUtf8("Przytrzymaj aby szybciej przewijać czas"));
     ui->pushButtonPlukUp->setAutoRepeat(true);
+    ui->pushButtonPlukUp->setToolTip(trUtf8("Przytrzymaj aby szybciej przewijać czas"));
     ui->pushButtonPlukDown->setAutoRepeat(true);
+    ui->pushButtonPlukDown->setToolTip(trUtf8("Przytrzymaj aby szybciej przewijać czas"));
+    ui->startButton->setToolTip(trUtf8("Start"));
+    ui->stopButton->setToolTip(trUtf8("Stop"));
+    ui->resetButton->setToolTip(trUtf8("Reset czasów"));
 
     mediaObject->setTickInterval(1000);
 
@@ -142,7 +153,7 @@ void MainWindow::resetCountDown()
 }
 
 void MainWindow::displayTime()
-{    
+{
     if ( czas_wyw > 0 && czas_przer > 0 && czas_utrw > 0 && czas_pluk > 0 )
     {
         if ( czas_start == 2 )
