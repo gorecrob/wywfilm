@@ -1,0 +1,1 @@
+Program do pomocy przy wywoływaniu filmów analogowych
